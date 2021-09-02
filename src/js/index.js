@@ -10,7 +10,7 @@ const input = document.querySelector("#input");
 
 function getData() {
   const city = input.value;
-  const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=0829e4d9f43cbab044ad71b0938a0557`;
+  const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid={API_KEY}`;
   fetch(API)
     .then((response) => response.json())
     .then((data) => {
