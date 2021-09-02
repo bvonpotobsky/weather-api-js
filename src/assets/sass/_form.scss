@@ -1,0 +1,42 @@
+form {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  .label {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    font-family: $font-primary;
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  .input {
+    display: block;
+    width: 50%;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    font-family: $font-primary;
+    font-weight: 500;
+  }
+
+  .button {
+    display: block;
+    width: 30%;
+    height: 3rem;
+    margin: 0 auto;
+    border: none;
+    border-radius: 2px;
+    margin-top: 1rem;
+    outline: none;
+    font-weight: 600;
+    font-family: $font-primary;
+    background-color: rgba($color-white, 1);
+  }
+}

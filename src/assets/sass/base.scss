@@ -1,3 +1,11 @@
+// Variables
+$font-primary: "Nunito", sans-serif;
+$font-secondary: sans-serif;
+
+$color-primary: #1a357c;
+$color-black: #000;
+$color-white: #fff;
+
 *,
 *::before,
 *::after {
@@ -8,4 +16,11 @@
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%; // 1rem == 10px;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  background-color: $color-primary;
 }
