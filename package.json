@@ -1,0 +1,14 @@
+{
+  "name": "wheather-api",
+  "version": "1.0.0",
+  "description": "Wheather App connected to an API",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass -w src/assets/sass/main.scss src/assets/css/style.css"
+  },
+  "author": "@bvonpotobsky",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
