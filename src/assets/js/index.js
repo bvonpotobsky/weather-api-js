@@ -1,16 +1,16 @@
 // Modules
 import { makeCard } from "./utils.js";
 import { handleError } from "./utils.js";
+import { isCityPrinted } from "./utils.js";
 
 // Catch the DOM
 // const addButton = document.querySelector("#button");
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
-const cities = [];
 
 // Request for the City
 function getCity(e) {
-  e.preventDefault(); //! come back here
+  e.preventDefault();
   // Store city
   const city = input.value.toLowerCase();
   // Request DATA
@@ -25,30 +25,15 @@ async function fetchData(city) {
   if (!isCityPrinted(city)) {
     try {
       const response = await fetch(API);
-      if (response.status !== 404) {
-        const data = await response.json();
-        makeCard(data);
-      } else {
-        // Show alert message
-        handleError(city);
-      }
+      const data = await response.json();
+      makeCard(data);
     } catch (err) {
+      handleError({ err: err });
       console.error(err);
     }
   } else {
-    handleError(city);
+    handleError({ city: city });
   }
 }
 
-const isCityPrinted = (city) => {
-  // Check if that city has been requested
-  if (cities.includes(city) && city !== "") {
-    return true;
-  } else {
-    cities.push(city);
-  }
-};
-
-// addButton.addEventListener("click", getCity);
 form.addEventListener("submit", getCity);
-// addButton.addEventListener("click", getCity);

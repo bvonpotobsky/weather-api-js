@@ -2,6 +2,9 @@
 const cardContainer = document.querySelector(".container");
 const alertMsg = document.querySelector("#alert");
 
+// Variables
+const cities = [];
+
 // Function to make the Card
 export function makeCard(data) {
   // Store values
@@ -35,14 +38,14 @@ export function makeCard(data) {
 }
 
 // Handle Error
-export function handleError(city) {
-  if (city !== "") {
+export function handleError({ city: city, err: err }) {
+  if (city !== "" && city !== undefined) {
     alertMsg.textContent = "Ya tienes esa ciudad en tu lista!";
     alertMsg.style.display = "block";
     input.value = "";
     setTimeout(() => {
       alertMsg.style.display = "none";
-    }, 1800);
+    }, 2000);
   } else {
     alertMsg.textContent = "Ingresa una ciudad valida!";
     alertMsg.style.display = "block";
@@ -51,6 +54,16 @@ export function handleError(city) {
 
     setTimeout(() => {
       alertMsg.style.display = "none";
-    }, 1800);
+    }, 2000);
+  }
+}
+
+// Function to check if city has already been shown
+export function isCityPrinted(city) {
+  // Check if that city has been requested
+  if (cities.includes(city) && city !== "") {
+    return true;
+  } else {
+    cities.push(city);
   }
 }
