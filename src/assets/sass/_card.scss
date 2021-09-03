@@ -36,16 +36,15 @@
   &__day {
     position: absolute;
     top: 50%;
-    right: -5%;
+    right: -3rem;
     transform: translate(-50%, -50%);
 
     &__icon {
-      width: 8rem;
+      width: 9rem;
     }
     &__info {
       text-align: center;
       margin-top: -2rem;
-      margin-left: 0.75rem;
     }
   }
 }
