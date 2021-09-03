@@ -39,7 +39,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    animation-name: infiniteBanner1;
+    animation-name: infiniteBanner;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 10s; }
@@ -55,9 +55,9 @@ nav {
     nav div span {
       font-weight: bold; }
 
-@keyframes infiniteBanner1 {
+@keyframes infiniteBanner {
   0% {
-    transform: translateX(225px);
+    transform: translateX(500px);
     visibility: visible; }
   75% {
     transform: translateX(-750px);
