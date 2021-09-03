@@ -2,7 +2,9 @@ nav {
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 900px;
   height: 6rem;
+  margin: 0 auto;
   background-color: $color-white;
   overflow: hidden;
 
@@ -22,8 +24,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 2rem;
     margin: 0 2rem;
+    font-size: 2rem;
 
     p {
       display: flex;
