@@ -1,7 +1,6 @@
 // Modules
 import { makeCard } from "./utils.js";
 import { handleError } from "./utils.js";
-import { cityNotFound } from "./utils.js";
 
 // Catch the DOM
 const addButton = document.querySelector("#button");
@@ -12,31 +11,40 @@ const cities = [];
 function getCity() {
   // Store city
   const city = input.value.toLowerCase();
-  // Check if that city has been requested
-  if (!cities.includes(city) && city !== "") {
-    cities.push(city);
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=0829e4d9f43cbab044ad71b0938a0557`;
-    // Request DATA
-    fetchData(API);
+  // Request DATA
+  fetchData(city);
+}
+
+// Fetch the data from the city
+async function fetchData(city) {
+  const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=0829e4d9f43cbab044ad71b0938a0557`;
+
+  // Check if that city has already been shown
+  if (!isCityPrinted(city)) {
+    try {
+      const response = await fetch(API);
+      if (response.status !== 404) {
+        const data = await response.json();
+        makeCard(data);
+      } else {
+        // Show alert message
+        handleError(city);
+      }
+    } catch (err) {
+      console.error(err);
+    }
   } else {
-    // If city already exists or its undefined
     handleError(city);
   }
 }
 
-// Fetch the data from the city
-async function fetchData(url) {
-  try {
-    const response = await fetch(url);
-    if (response.status !== 404) {
-      const data = await response.json();
-      makeCard(data);
-    } else {
-      cityNotFound();
-    }
-  } catch (err) {
-    console.error(err);
+const isCityPrinted = (city) => {
+  // Check if that city has been requested
+  if (cities.includes(city) && city !== "") {
+    return true;
+  } else {
+    cities.push(city);
   }
-}
+};
 
 addButton.addEventListener("click", getCity);

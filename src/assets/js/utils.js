@@ -14,7 +14,7 @@ export function makeCard(data) {
   // Make the card
   const card = document.createElement("div");
   card.classList.add("card");
-  // Make the card content
+  // Make card content
   const CardHTML = `
         <h3 class="card__city">${city}, ${country}</h3>
         <p class="card__update">Last update: 6:52 a.m.</p>
@@ -39,26 +39,18 @@ export function handleError(city) {
   if (city !== "") {
     alertMsg.textContent = "Ya tienes esa ciudad en tu lista!";
     alertMsg.style.display = "block";
+    input.value = "";
     setTimeout(() => {
       alertMsg.style.display = "none";
-    }, 1500);
+    }, 1800);
   } else {
     alertMsg.textContent = "Ingresa una ciudad valida!";
     alertMsg.style.display = "block";
     alertMsg.style.visibility = 1;
+    input.value = "";
 
     setTimeout(() => {
       alertMsg.style.display = "none";
-    }, 1500);
+    }, 1800);
   }
-}
-
-// City not found
-export function cityNotFound() {
-  input.value = "";
-  alertMsg.textContent = "Esa ciudad no existe!";
-  alertMsg.style.display = "block";
-  setTimeout(() => {
-    alertMsg.style.display = "none";
-  }, 1500);
 }
