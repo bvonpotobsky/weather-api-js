@@ -3,12 +3,14 @@ import { makeCard } from "./utils.js";
 import { handleError } from "./utils.js";
 
 // Catch the DOM
-const addButton = document.querySelector("#button");
+// const addButton = document.querySelector("#button");
+const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 const cities = [];
 
 // Request for the City
-function getCity() {
+function getCity(e) {
+  e.preventDefault(); //! come back here
   // Store city
   const city = input.value.toLowerCase();
   // Request DATA
@@ -47,4 +49,6 @@ const isCityPrinted = (city) => {
   }
 };
 
-addButton.addEventListener("click", getCity);
+// addButton.addEventListener("click", getCity);
+form.addEventListener("submit", getCity);
+// addButton.addEventListener("click", getCity);
