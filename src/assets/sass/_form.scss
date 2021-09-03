@@ -39,4 +39,13 @@ form {
     font-family: $font-primary;
     background-color: rgba($color-white, 1);
   }
+
+  .alert {
+    text-align: center;
+    margin: 1rem 0;
+    display: none;
+    transition: all 3s;
+    visibility: 0;
+    color: $color-red;
+  }
 }

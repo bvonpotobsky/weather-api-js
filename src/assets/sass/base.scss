@@ -5,6 +5,7 @@ $font-secondary: sans-serif;
 $color-primary: #1a357c;
 $color-black: #000;
 $color-white: #fff;
+$color-red: #c0392b;
 
 *,
 *::before,
@@ -23,4 +24,5 @@ body {
   font-family: $font-primary;
   font-size: 1.6rem;
   background-color: $color-primary;
+  min-height: 100vh;
 }
