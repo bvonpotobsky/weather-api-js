@@ -8,9 +8,11 @@ const cities = [];
 // Function to make the Card
 export function makeCard(data) {
   // Store values
+  console.log(data);
   const city = data.name;
   const country = data.sys.country;
   const description = data.weather[0].description;
+  const icon = data.weather[0].icon;
   const degrees = parseInt(data.main.temp);
   const max = parseInt(data.main.temp_max);
   const min = parseInt(data.main.temp_min);
@@ -26,7 +28,7 @@ export function makeCard(data) {
         <span class="card__day">
           <img
             class="card__day__icon"
-            src="./src/assets/icons/animated/cloudy-day-1.svg"
+            src="http://openweathermap.org/img/wn/${icon}.png"
             alt=""
           />
           <p class="card__day__info">${min}°/${max}°</p>
@@ -59,7 +61,7 @@ export function handleError({ city: city, err: err }) {
 }
 
 // Function to check if city has already been shown
-export function isCityPrinted(city) {
+export function isCityShown(city) {
   // Check if that city has been requested
   if (cities.includes(city) && city !== "") {
     return true;
