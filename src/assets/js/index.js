@@ -15,7 +15,7 @@ function getCity() {
   // Check if that city has been requested
   if (!cities.includes(city) && city !== "") {
     cities.push(city);
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=0829e4d9f43cbab044ad71b0938a0557`;
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=0829e4d9f43cbab044ad71b0938a0557`;
     // Request DATA
     fetchData(API);
   } else {

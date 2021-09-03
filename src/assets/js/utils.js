@@ -7,10 +7,10 @@ export function makeCard(data) {
   // Store values
   const city = data.name;
   const country = data.sys.country;
-  const degrees = parseInt((5 / 9) * (data.main.temp - 32));
   const description = data.weather[0].description;
-  const max = parseInt((5 / 9) * (data.main.temp_max - 32));
-  const min = parseInt((5 / 9) * (data.main.temp_min - 32));
+  const degrees = parseInt(data.main.temp);
+  const max = parseInt(data.main.temp_max);
+  const min = parseInt(data.main.temp_min);
   // Make the card
   const card = document.createElement("div");
   card.classList.add("card");
