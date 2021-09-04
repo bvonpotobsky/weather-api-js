@@ -3,7 +3,7 @@ const cardContainer = document.querySelector(".container");
 const alertMsg = document.querySelector("#alert");
 
 // Variables
-const cities = [];
+export let cities = [];
 
 // Function to make the Card
 export function makeCard(city) {
@@ -53,11 +53,11 @@ export function handleError({ city: city, err: err }) {
 }
 
 // Function to check if city has already been shown
-export function isCityShown(city) {
-  // Check if that city has been requested
-  if (cities.includes(city) && city !== "") {
-    return true;
-  } else {
-    cities.push(city);
-  }
-}
+// export function isCityShown(city) {
+//   // Check if that city has been requested
+//   if (cities.includes(city) && city !== "") {
+//     return true;
+//   } else {
+//     cities.push(city);
+//   }
+// }

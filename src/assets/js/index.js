@@ -3,7 +3,6 @@ import { makeCard } from "./utils.js";
 import { handleError } from "./utils.js";
 
 // Catch the DOM
-// const addButton = document.querySelector("#button");
 const form = document.querySelector("#form");
 const input = document.querySelector("#input");
 
