@@ -19,6 +19,7 @@
   border: 1px solid white;
   &__city {
     font-size: 2.2rem;
+    text-transform: capitalize;
   }
   &__update {
     font-size: 1.4rem;
