@@ -1,14 +1,28 @@
 {
   "name": "wheather-api",
   "version": "1.0.0",
-  "description": "Wheather App connected to an API",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass -w src/assets/sass/main.scss src/assets/css/style.css"
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bvonpotobsky/weather-api.git"
   },
   "author": "@bvonpotobsky",
-  "license": "MIT",
-  "devDependencies": {
-    "node-sass": "^6.0.1"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bvonpotobsky/weather-api/issues"
+  },
+  "homepage": "https://github.com/bvonpotobsky/weather-api#readme",
+  "dependencies": {
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.0"
   }
 }
