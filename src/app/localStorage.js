@@ -1,7 +1,7 @@
 export class LocalStorage {
   constructor() {
     this.city;
-    this.defaultCity = "London";
+    this.defaultCity = "Córdoba";
   }
 
   getLocationData() {
