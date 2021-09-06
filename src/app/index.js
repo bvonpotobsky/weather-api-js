@@ -5,31 +5,33 @@ import { UI } from "./UI";
 import { LocalStorage } from "./localStorage";
 
 const store = new LocalStorage();
-const { storeCity, storeCountryCode } = store.getLocationData();
+const { city } = store.getLocationData();
 const ui = new UI();
-const weather = new Weather(storeCity, storeCountryCode);
+const weather = new Weather(city);
 
 async function fetchWeather() {
   const data = await weather.getWeather();
+  console.log(data);
   ui.render(data);
 }
 
-// Clean input when submit
-function updateInput() {
-  city.value = "";
-}
-
 // Catch the DOM
-const submit = document.getElementById("w-change-btn");
-const city = document.getElementById("city");
+const form = document.querySelector("#form");
+const input = document.querySelector("#city");
 
-submit.addEventListener("click", (e) => {
+// Event Listener
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  let cityValue = city.value;
+  let cityValue = input.value;
   weather.changeLocation(cityValue);
-  fetchWeather();
   store.setLocationData(cityValue);
+  fetchWeather();
   updateInput();
 });
 
 document.addEventListener("DOMContentLoaded", fetchWeather);
+
+// Clean input when submit
+function updateInput() {
+  input.value = "";
+}

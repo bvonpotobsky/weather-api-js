@@ -12,7 +12,7 @@ export class LocalStorage {
     }
 
     return {
-      storeCity: this.city,
+      city: this.city,
     };
   }
 
