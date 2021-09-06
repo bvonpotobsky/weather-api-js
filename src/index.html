@@ -4,60 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
       rel="stylesheet"
-      href="https://bootswatch.com/4/lux/bootstrap.min.css"
     />
     <title>The Weather Channel</title>
   </head>
   <body>
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-4 mx-auto text-center">
-          <div class="card">
-            <div class="card-body">
-              <h1 id="weather-location" class="h3"></h1>
-              <h3 id="weather-description"></h3>
-              <h3 id="weather-string"></h3>
-              <ul class="list-group mt-3">
-                <li id="weather-humidity" class="list-group-item"></li>
-                <li id="weather-wind" class="list-group-item"></li>
-              </ul>
-            </div>
-          </div>
+    <form action="">
+      <input type="text" placeholder="Córdoba" autofocus />
+      <button>&#x2192;</button>
+    </form>
 
-          <div class="card">
-            <div class="card-body">
-              <form id="w-form">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="city"
-                    class="form-control"
-                    placeholder="City"
-                    autofocus
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="countryCode"
-                    class="form-control"
-                    placeholder="Country Code"
-                    autofocus
-                  />
-                </div>
+    <section class="weather">
+      <h1 class="weather__city">Córdoba, AR</h1>
+      <p class="weather__date">Friday 10 January 2020</p>
 
-                <div class="form-group">
-                  <button class="btn btn-dark btn-block" id="w-change-btn">
-                    Save Changes
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <h3 class="weather__temp">20°C</h3>
+      <p class="weather__description">Clear</p>
+      <p class="weather__min-max">20°C</p>
+    </section>
   </body>
 </html>

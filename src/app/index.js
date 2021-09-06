@@ -1,5 +1,5 @@
 // Modules
-import "../css/index.css";
+import "../sass/main.scss";
 import { Weather } from "./Weather";
 import { UI } from "./UI";
 import { LocalStorage } from "./localStorage";
