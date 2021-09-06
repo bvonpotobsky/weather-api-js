@@ -4,23 +4,40 @@
   align-items: center;
   font-family: $font-1;
   font-size: 1.6rem;
+  color: rgba(#fff, 0.8);
+
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
 
   &__city {
     margin: 3rem 0 0 0;
-    font-family: 3rem;
+    font-size: 4rem;
+    font-weight: 600;
   }
 
   &__date {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.5rem;
   }
 
   &__temp {
     margin: 3rem 0;
+    font-size: 8rem;
   }
 
   &__description {
+    font-size: 3.5rem;
+    font-weight: bold;
   }
 
   &__min-max {
     margin: 1rem 0;
+    font-size: 2rem;
+    font-weight: 600;
   }
 }
