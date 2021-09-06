@@ -1,0 +1,26 @@
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-1;
+  font-size: 1.6rem;
+
+  &__city {
+    margin: 3rem 0 0 0;
+    font-family: 3rem;
+  }
+
+  &__date {
+  }
+
+  &__temp {
+    margin: 3rem 0;
+  }
+
+  &__description {
+  }
+
+  &__min-max {
+    margin: 1rem 0;
+  }
+}
